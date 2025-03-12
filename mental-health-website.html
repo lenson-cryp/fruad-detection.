@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Path - Mental Health Support for Addiction Recovery</title>
+    <style>
+        :root {
+            --primary: #3a7ca5;
+            --primary-light: #d6e8f2;
+            --secondary: #4da167;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2c6384;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #d6e8f2 0%, #f8f9fa 100%);
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+        
+        .services {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .resources {
+            padding: 5rem 0;
+            background-color: var(--primary-light);
+        }
+        
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .resource-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        .resource-content {
+            padding: 1.5rem;
+        }
+        
+        .resource-content h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+        
+        .blog {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .cta {
+            padding: 5rem 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .btn-light:hover {
+            background-color: #f5f5f5;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3d556b;
+            padding-top: 2rem;
+            color: #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        /* Crisis banner */
+        .crisis-banner {
+            background-color: #ef4444;
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+        }
+        
+        .crisis-banner p {
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .crisis-banner span {
+            font-weight: 700;
+        }
+        
+        /* Assessment tool */
+        .assessment {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .assessment-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .assessment-form h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .radio-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        
+        .radio-option {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .radio-option input {
+            margin-right: 5px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Programs section */
+        .programs {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .program-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .program-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .program-details p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .program-details strong {
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Crisis Helpline Banner -->
+    <div class="crisis-banner">
+        <div class="container">
+            <p>Need immediate help? Call the Substance Abuse Helpline: <span>14446</span> (Available 24/7)</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🌱</span> Recovery<span>Path</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Support</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#assessment">Self-Assessment</a></li>
+                        <li><a href="#" class="btn">Get Help Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Journey to Recovery Starts Here</h1>
+                <p>Recovery is possible. We provide compassionate mental health support specifically designed for individuals struggling with substance use disorders. You are not alone on this path.</p>
+                <a href="#services" class="btn">Explore Our Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">How We Support Your Recovery</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🗣️</div>
+                    <h3>Addiction Counseling</h3>
+                    <p>One-on-one sessions with specialized counselors who understand the complex relationship between mental health and substance use disorders.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3>Peer Support Groups</h3>
+                    <p>Connect with others who truly understand your experiences in a safe, non-judgmental environment facilitated by recovery specialists.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧠</div>
+                    <h3>Dual Diagnosis Treatment</h3>
+                    <p>Comprehensive care addressing both substance use disorders and co-occurring mental health conditions like anxiety, depression, and trauma.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏡</div>
+                    <h3>Family Support</h3>
+                    <p>Resources and counseling for loved ones to foster healthy relationships that support long-term recovery and healing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🙏🏻</div>
+                    <h3>Quotus</h3>
+                    <p>1. "Addiction is a disease, but it's also a choice. You can choose to get help, to seek treatment, and to start a new life."<br>
+2. "You can't start the next chapter of your life if you keep re-reading the last one."<br>
+3. "Recovery is not for the faint of heart. It's for those who are brave, resilient, and determined to live a better life."<br>
+4. "The greatest glory in living lies not in never falling, but in rising every time we fall."<br>
+5. "You are not your addiction. You are a unique, valuable, and worthy individual who deserves a life of purpose and fulfillment."<br>
+
+ Quotes from Famous People
+1. "I was addicted to crack, and I was addicted to cocaine. But I was also addicted to the lifestyle." - Eminem<br>
+2. "I've been through a lot of struggles, and I've made some mistakes. But I've always tried to learn from them and move forward." - Drew Barrymore<br>
+3. "Recovery is a journey, not a destination. It takes time, effort, and support, but it's worth it." - Robert Downey Jr.<br>
+
+Inspirational Sayings
+1. "One day at a time."<br>
+2. "Recovery is possible."<br>
+3. "You are stronger than your addiction."<br>
+4. "Every day is a new chance to start again."<br>
+5. "Hope is the anchor of the soul."<br>
+.</p>
+                </div>
+
+            </div>
+             <div class="service-card">
+                    <div class="service-icon">👬</div>
+                      <h3>De_addiction Center</h3>
+                    <p><br>
+1.Thiruvananthapuram	General Hospital, Neyyattinkara	
+0471 - 2222235
+94000 69409<br>
+2.
+Kollam	RamaRao Memorial Hospital, Nedungolam, Chathannur	
+0474 - 2512324
+94000 69441<br>
+3.
+Pathanamthitta	Thaluk Hospital, Ranni	
+04735 - 229589
+94000 69468<br>
+4.
+Alappuzha	District Hospital, Chengannur	
+0479 - 2452267
+94000 69488<br>
+5.
+Kottayam	Town Government Hospital, Pala	
+0482 - 2215154
+94000 69511<br>
+6.
+Idukki	District Hospital, Cheruthoni	
+0486 - 2232474
+94000 69532<br>
+7.
+Ernakulam	Government Hospital, Muvattupuzha	
+0485 - 2832360
+94000 69564<br>
+8.
+Thrissur	Thaluk Hospital, Chalakkudy	
+0480 - 2701823
+94000 69589<br>
+9.
+Palakkad	Tribal Specialty Hospital, Kottathara	
+04924 - 254392
+94000 69588<br>
+10.
+Malappuram	Government Hospital, Nilambur	
+04931 - 220351
+94000 69646<br>
+11.
+Kozhikode	Government Beach Hospital, Kozhikode	
+0495 - 2365367
+94000 69675<br>
+12.
+Wayanad	General Hospital, Kainatti	
+04936 - 206768
+94000 69663<br>
+13.
+Kannur	Government Hospital, Payyannur	
+04985 - 205716
+94000 69695<br>
+14.
+Kasargod	Taluk Hospital, Neeleswaram<br>
+<br>
+<br>
+<br>
+# Kerala-Based De-Addiction Centers
+- Vimukthi De-addiction Centers: Located in various districts of Kerala, including Thiruvananthapuram, Kollam, Pathanamthitta, Alappuzha, Kottayam, Idukki, Ernakulam, Thrissur, Palakkad, Malappuram, Kozhikode, Wayanad, Kannur, and Kasargod. Each center has a unique address and phone number .
+- Vimukthi Counseling Centers: Located in Thiruvananthapuram, Ernakulam, and Kozhikode, these centers offer counseling services for individuals struggling with addiction<br>
+<br>
+<br>
+# Pan-India De-Addiction Centers
+- Sanctum Wellness: A luxury rehabilitation center located in New Delhi, offering treatment for various addictions, including substance abuse, alcoholism, and behavioral addictions<br>
+ Alpha Healing Center: A holistic rehabilitation center located in Vadodara, offering treatment for substance abuse, alcoholism, and behavioral addictions ² ³.
+- Lotus Wellness Rehab Centre: A luxury rehabilitation center located in Coimbatore, offering treatment for various addictions<br>
+Drug Dependence Treatment Centre: A rehabilitation center located in Ghaziabad, offering treatment for substance abuse and addiction<br>
+<br>
+
+.</p>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="programs">
+        <div class="container">
+            <h2 class="section-title">Recovery Programs</h2>
+            <div class="program-card">
+                <h3>Intensive Outpatient Program (IOP)</h3>
+                <p>A structured treatment program that allows you to maintain your daily responsibilities while receiving the support you need.</p>
+                <div class="program-details">
+                    <p><strong>Duration:</strong> 8-12 weeks</p>
+                    <p><strong>Schedule:</strong> 3-4 sessions per week, 2-3 hours each</p>
+                    <p><strong>Includes:</strong> Group therapy, individual counseling, skill-building workshops, and relapse prevention planning</p>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="program-card">
+                <h3>Relapse Prevention Program</h3>
+                <p>Specialized support for individuals in early recovery or those who have experienced a recent relapse.</p>
+                <div class="program-details">
+                    <p><strong>Duration:</strong> Ongoing support</p>
+                    <p><strong>Schedule:</strong> Weekly sessions</p>
+                    <p><strong>Includes:</strong> Trigger identification, coping strategies, lifestyle balance, and crisis planning</p>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="program-card">
+                <h3>Mindfulness-Based Recovery</h3>
+                <p>Learn to manage cravings and emotional triggers through evidence-based mindfulness practices.</p>
+                <div class="program-details">
+                    <p><strong>Duration:</strong> 10 weeks</p>
+                    <p><strong>Schedule:</strong> Weekly 90-minute sessions</p>
+                    <p><strong>Includes:</strong> Meditation training, mindful awareness practices, and integrated recovery support</p>
+                </div>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Assessment Tool -->
+    <section id="assessment" class="assessment">
+        <div class="container">
+            <h2 class="section-title">Substance Use Self-Assessment</h2>
+            <div class="assessment-form">
+                <h3>Is your substance use affecting your wellbeing?</h3>
+                <p>This confidential questionnaire can help you evaluate your relationship with substances. Your answers are not stored and are for your reflection only.</p>
+                <form>
+                    <div class="form-group">
+                        <label>1. Have you ever felt you should cut down on your drinking or drug use?</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" name="q1" id="q1-1">
+                                <label for="q1-1">Never</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q1" id="q1-2">
+                                <label for="q1-2">Rarely</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q1" id="q1-3">
+                                <label for="q1-3">Sometimes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q1" id="q1-4">
+                                <label for="q1-4">Often</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>2. Have people annoyed you by criticizing your substance use?</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" name="q2" id="q2-1">
+                                <label for="q2-1">Never</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q2" id="q2-2">
+                                <label for="q2-2">Rarely</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q2" id="q2-3">
+                                <label for="q2-3">Sometimes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q2" id="q2-4">
+                                <label for="q2-4">Often</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>3. Have you ever felt guilty about your drinking or drug use?</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" name="q3" id="q3-1">
+                                <label for="q3-1">Never</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q3" id="q3-2">
+                                <label for="q3-2">Rarely</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q3" id="q3-3">
+                                <label for="q3-3">Sometimes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q3" id="q3-4">
+                                <label for="q3-4">Often</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>4. Do you use substances to cope with stress, anxiety, or other emotional issues?</label>
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" name="q4" id="q4-1">
+                                <label for="q4-1">Never</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q4" id="q4-2">
+                                <label for="q4-2">Rarely</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q4" id="q4-3">
+                                <label for="q4-3">Sometimes</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="q4" id="q4-4">
+                                <label for="q4-4">Often</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn">View Results</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2 class="section-title">Recovery Resources</h2>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <div class="resource-img">Resource Image Placeholder</div>
+                    <div class="resource-content">
+                        <h3>Understanding Triggers & Cravings</h3>
+                        <p>Learn to identify your personal triggers and develop effective strategies to manage cravings without using substances.</p>
+                        <a href="#" class="btn">Download Guide</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-img">Resource Image Placeholder</div>
+                    <div class="resource-content">
+                        <h3>Dual Diagnosis Workbook</h3>
+                        <p>A comprehensive workbook for those managing both substance use disorders and mental health conditions like depression or anxiety.</p>
+                        <a href="#" class="btn">Download</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-img">Resource Image Placeholder</div>
+                    <div class="resource-content">
+                        <h3>Building Your Support Network</h3>
+                        <p>Practical guidance for creating and maintaining healthy relationships that support your recovery journey.</p>
+                        <a href="#" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Recovery Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "After struggling with opioid addiction for 7 years, I finally found a place that treated me with dignity and addressed my underlying anxiety. Today, I'm 18 months sober and have rebuilt relationships I thought were lost forever."
+                    </div>
+                    <div class="testimonial-author">- Michael, 36</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The dual diagnosis approach made all the difference for me. I'd been in and out of treatment for years, but no one addressed my depression alongside my alcohol use. Recovery Path helped me heal both issues together."
+                    </div>
+                    <div class="testimonial-author">- Sarah, 42</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "When I relapsed after 2 years of sobriety, I felt like a complete failure. The relapse prevention program taught me that recovery isn't linear and gave me the tools to get back on track without shame."
+                    </div>
+                    <div class="testimonial-author">- James, 29</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Recovery Insights</h2>
+            <div class="resource-list">
+                <div class="resource-card">
+                    <div class="resource-img">Article Image Placeholder</div>
+                    <div class="resource-content">
+                        <h3>The Neuroscience of Addiction and Recovery</h3>
+                        <p>Understanding how substances affect your brain and how recovery allows healing to occur over time.</p>
+                        <a href="#" class="btn">Read Article</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-img">Article Image Placeholder</div>
+                    <div class="resource-content">
+                        <h3>Navigating Early Recovery: The First 90 Days</h3>
+                        <p>Practical strategies for getting through the challenging early phase of recovery and building a foundation for lasting change.</p>
+                        <a href="#" class="btn">Read Article</a>
+                    </div>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-img">Article Image Placeholder</div>
+                    <div class="resource-content">
+                        <h3>Supporting a Loved One with Substance Use Disorder</h3>
+                        <p>How to provide effective support while maintaining healthy boundaries and taking care of your own wellbeing.</p>
+                        <a href="#" class="btn">Read Article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Recovery Is Possible. We're Here to Help.</h2>
+            <p>Taking the first step toward recovery takes courage. Our compassionate team understands the challenges you're facing and is ready to support you with evidence-based care tailored to your unique needs.</p>
+            <a href="#" class="btn btn-light">Talk to a Recovery Specialist</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Recovery Path</h3>
+                    <p>Providing compassionate, evidence-based mental health support for individuals struggling with substance use disorders.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Our Support</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#assessment">Self-Assessment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get Help</h3>
+                    <ul>
+                        <li><a href="#">Find Treatment</a></li>
+                        <li><a href="#">Substance Abuse Helpline</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">HIPAA Compliance</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Recovery Path. All rights reserved. This website is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
